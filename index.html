@@ -11,17 +11,17 @@
     <script src='https://npmcdn.com/mapbox-gl-circle/dist/mapbox-gl-circle.min.js'></script>
 
     <!--Internal scripts-->
-    <script src="./index.js"></script>
-    <script src="./scripts/getApiData.js"></script>
-    <script src="./scripts/filter.js"></script>
-    <script src="./scripts/countryList.js"></script>
-    <script src="./scripts/map.js"></script>
-    <script src="./scripts/charts.js"></script>
-    <script src="./scripts/mainData.js"></script>
+    <script src="index.js"></script>
+    <script src="scripts/getApiData.js"></script>
+    <script src="scripts/filter.js"></script>
+    <script src="scripts/countryList.js"></script>
+    <script src="scripts/map.js"></script>
+    <script src="scripts/charts.js"></script>
+    <script src="scripts/mainData.js"></script>
 
     <!--stylesheets-->
     <link href='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css' rel='stylesheet' />
-    <link rel="stylesheet" href="/styles/large.css">
+    <link rel="stylesheet" href="styles/large.css">
 
     <title>Corona Map</title>
 </head>
@@ -83,12 +83,6 @@
             <div class='map-container' id='map'></div>
             <script>
                 mapboxgl.accessToken = 'pk.eyJ1IjoiaGVyc2hkMjMiLCJhIjoiY2tkbXNhN3I5MWJocTJxb2gzNzNld2sxYyJ9.-4GwMGsBZIokIWIhGixEbw';
-                var map = new mapboxgl.Map({
-                    container: 'map',
-                    style: 'mapbox://styles/mapbox/dark-v10',
-                    zoom: 1.5,
-                    center: [0, 20]
-                });
             </script>
         </div>
         <div class="side-pane-container" id="side-panel">

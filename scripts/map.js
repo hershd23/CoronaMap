@@ -31,20 +31,7 @@ function initMap(circles, lat, lng, zoom, color, type) {
         } else {
             circleSize = circles[country].total
         }
-
-        /*
-        var countryCircle = new MapboxCircle({
-            strokeColor: color,
-            strokeOpacity: 0.8,
-            strokeWeight: 2,
-            fillColor: color,
-            fillOpacity: 0.35,
-            map: map,
-            center: circles[country].center,
-            radius: Math.sqrt(circleSize) * 1000
-        }); */
-
-            
+   
         var countryCircle = new MapboxCircle(circles[country].center, Math.sqrt(circleSize) * 1000, {
             strokeColor: color,
             strokeOpacity: 0.8,
@@ -62,8 +49,12 @@ buildCircles = (data, lat, lng, zoom, color, type) => {
     let passColor = ''
     let passType = ''
 
+    console.log(type)
+
     if (!type) { passType = 'active' } else { passType = type }
     if (!color) { passColor = '#9945d7' } else { passColor = color }
+
+    console.log(data, type);
 
     data.map((entry) => {
         let item = {}

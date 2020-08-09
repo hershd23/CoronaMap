@@ -10,12 +10,7 @@ masterFilter = (color, type) => {
     }).then((res) => {
         return res.json()
     }).then((data) => {
-        /*
         buildCountryList(data, 0, type)
         buildCircles(data, 10, 15, 2, color, type)
-        */
-
-        console.log("Master")
-        console.log(data)
     })
 }
