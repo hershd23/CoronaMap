@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--External scripts-->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.js'></script>
+    <script src="https://kit.fontawesome.com/f1b887a66b.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src='https://npmcdn.com/mapbox-gl-circle/dist/mapbox-gl-circle.min.js'></script>
+
+    <!--Internal scripts-->
+    <script src="./index.js"></script>
+    <script src="./scripts/getApiData.js"></script>
+    <script src="./scripts/filter.js"></script>
+    <script src="./scripts/countryList.js"></script>
+    <script src="./scripts/map.js"></script>
+    <script src="./scripts/charts.js"></script>
+    <script src="./scripts/mainData.js"></script>
+
+    <!--stylesheets-->
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css' rel='stylesheet' />
+    <link rel="stylesheet" href="/styles/large.css">
+
+    <title>Corona Map</title>
+</head>
+<body>
+    <div class="page-one">
+        <div class="main-container" id="main">
+            <div class="top-banner">
+                <div class="title">Corona Map</div>
+                <div class="triggers-container">
+                    <div class="show-hide-trigger-container" id="showHideTrigger">
+                        <div class="show-hide-button" onclick="hidePanel()"><i class="fas fa-chevron-right"></i></div>
+                    </div>
+                    <div class="reset" onclick="initData()"><i class="fas fa-undo"></i></div>
+                </div>
+            </div>
+            <div class="buttons-container">
+                <div class="button" onclick="filterActive()">
+                    <div class="icon-container infected"><i class="fas fa-virus"></i></div>
+                    <div class="info-container">
+                        <div class="general-info">
+                            <div class="category">Infected</div>
+                            <div class="total" id="active-total"></div>
+                        </div>
+                        <div class="delta" id="active-delta"></div>
+                    </div>
+                </div>
+                <div class="button" onclick="filterDeaths()">
+                    <div class="icon-container deaths"><i class="fas fa-skull"></i></div>
+                    <div class="info-container">
+                        <div class="general-info">
+                            <div class="category">Deaths</div>
+                            <div class="total" id="deaths-total"></div>
+                        </div>
+                        <div class="delta" id="deaths-delta"></div>
+                    </div>
+                </div>
+                <div class="button" onclick="filterRecovered()">
+                    <div class="icon-container recovered"><i class="fas fa-laptop-medical"></i></div>
+                    <div class="info-container">
+                        <div class="general-info">
+                            <div class="category">Recovered</div>
+                            <div class="total" id="recovered-total"></div>
+                        </div>
+                        <div class="delta" id="recovered-delta"></div>
+                    </div>
+                </div>
+                <div class="button" onclick="initData()">
+                    <div class="icon-container total-cases"><i class="fas fa-globe-americas"></i></div>
+                    <div class="info-container">
+                        <div class="general-info">
+                            <div class="category">Total</div>
+                            <div class="total" id="cases-total"></div>
+                        </div>
+                        <div class="delta" id="cases-delta"></div>
+                    </div>
+                </div>
+            </div>
+            <!--Setting up the map-->
+            <div class='map-container' id='map'></div>
+            <script>
+                mapboxgl.accessToken = 'pk.eyJ1IjoiaGVyc2hkMjMiLCJhIjoiY2tkbXNhN3I5MWJocTJxb2gzNzNld2sxYyJ9.-4GwMGsBZIokIWIhGixEbw';
+                var map = new mapboxgl.Map({
+                    container: 'map',
+                    style: 'mapbox://styles/mapbox/dark-v10',
+                    zoom: 1.5,
+                    center: [0, 20]
+                });
+            </script>
+        </div>
+        <div class="side-pane-container" id="side-panel">
+            <div class="search-bar">
+                <button type="submit" onclick="filterCountries()"><i class="fas fa-search"></i></button>
+                <input type="text" onkeyup="filterCountries(this.value)" placeholder="Search" class="input-box"
+                    id="search-input-box">
+            </div>
+            <div class="legend-container">
+                <div class="legend-placeholder"></div>
+                <div class="total legend-total">Total</div>
+                <div class="legend-delta">
+                    <div class="total legend-infected legend-item">Infected</div>
+                    <div class="total legend-deaths legend-item">Deaths</div>
+                    <div class="total legend-recovered legend-item">Recovered</div>
+                </div>
+            </div>
+            <div class="country-list-container">
+                <div class="country-list" id="country-list">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="charts-container">
+        <div id="piechart"></div>
+        <div id="curve_chart"></div>
+    </div>
+    
+</body>
+</html>
