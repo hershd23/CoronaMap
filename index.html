@@ -21,7 +21,9 @@
 
     <!--stylesheets-->
     <link href='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css' rel='stylesheet' />
-    <link rel="stylesheet" href="styles/large.css">
+    <link rel="stylesheet" media="screen and (min-width: 1200px)" href="styles/large.css">
+    <link rel="stylesheet" media="screen and (min-width: 600px) and (max-width: 1199px)" href="styles/medium.css">
+    <link rel="stylesheet" media="screen and (min-width: 0px) and (max-width: 599px)" href="styles/mob.css">
 
     <title>Corona Map</title>
 </head>
@@ -110,6 +112,9 @@
     <div class="charts-container">
         <div id="piechart"></div>
         <div id="curve_chart"></div>
+    </div>
+    <div class="footer">
+        <div class="container">Made by Hersh Dhillon. To contribute click <a href="https://github.com/hershd23/CoronaMap">here</a></div>
     </div>
     
 </body>

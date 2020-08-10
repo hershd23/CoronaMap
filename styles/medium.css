@@ -17,7 +17,7 @@ body {
     flex-basis: 65%;
 } */
 
-#main {
+#main{
     width: 65%;
     flex-basis: 65%;
     transition: all 0.2s;
@@ -30,10 +30,11 @@ body {
 }
 
 .title {
-    font-size: 80px;
-    font-weight: 600;
+    font-size: 40px;
+    font-weight: 400;
     color: white;
-    margin-bottom: 2%;
+    margin-top: 2%;
+    margin-bottom: 5%;
     margin-left: 1%;
     text-align: center;
     width: 95%;
@@ -48,40 +49,40 @@ body {
 }
 
 .show-hide-button {
-    height: 36px;
-    width: 36px;
+    height: 32px;
+    width: 32px;
     color: white;
     background-color: #44444C;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 20px;
-    margin-right: 20px;
+    margin-top: 10px;
+    margin-right: 10px;
     cursor: pointer;
     transition: all 0.2s;
 }
 
-.show-hide-button:hover {
+.show-hide-button:hover{
     transform: scale(1.2);
 }
 
 .reset {
-    height: 36px;
-    width: 36px;
+    height: 32px;
+    width: 32px;
     color: white;
     background-color: #44444C;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 20px;
-    margin-right: 20px;
+    margin-top: 10px;
+    margin-right: 10px;
     cursor: pointer;
     transition: all 0.2s;
 }
 
-.reset:hover {
+.reset:hover{
     transform: scale(1.2);
 }
 
@@ -101,21 +102,21 @@ body {
     cursor: pointer;
     background-color: #44444C;
     border-radius: 12px;
-    box-shadow: 0px 0px 20px 10px #44444C/*inset, 0px 0px 0px 1000px rgba(0,0,0,0.5)*/
+    box-shadow: 0px 0px 15px 5px #44444C/*inset, 0px 0px 0px 1000px rgba(0,0,0,0.5)*/
 }
 
 .icon-container {
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
     /* object-fit: contain; */
     border-radius: 12px;
-    margin-right: 10px;
+    margin-right: 5px;
 }
 
 .icon-container i {
     height: 100%;
     width: 100%;
-    font-size: 30px;
+    font-size: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -144,24 +145,24 @@ body {
 .category {
     padding-right: 10px;
     color: white;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .total {
-    font-size: 16px;
+    font-size: 14px;
     color: #FF802E;
     font-weight: 600;
 }
 
 .delta {
     color: white;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 600;
 }
 
 /* side navigator */
 
-#side-panel {
+#side-panel{
     width: 35%;
     flex-basis: 35%;
     transition: all 0.2s;
@@ -178,13 +179,13 @@ body {
 }
 
 .search-bar {
-    height: 50px;
+    height: 30px;
     width: 90%;
     background-color: #282A2F;
     border-radius: 12px;
     display: flex;
     align-items: center;
-    font-size: 20px;
+    font-size: 14px;
     color: white;
     /* top right bottom left */
     margin: 5% 0 5% 0;
@@ -192,18 +193,19 @@ body {
 
 .search-bar input::placeholder {
     color: white;
+    font-size: 14px;
 }
 
 .search-bar button {
     background-color: #282A2F;
     border: none;
     color: white;
-    font-size: 20px;
+    font-size: 14px;
 }
 
 .search-bar i {
-    margin-right: 10px;
-    margin-left: 10px;
+    margin-right: 5px;
+    margin-left: 5px;
 }
 
 .input-box {
@@ -255,7 +257,7 @@ body {
 }
 
 .legend-item{
-    width: 33%;
+    /* width: 33%; */
     text-align: end;
 }
 
@@ -275,7 +277,7 @@ body {
 
 .country-container {
     display: flex;
-    padding: 4%;
+    padding: 5%;
     /* flex-direction: column; */
     transition: all 0.2s;
 }
@@ -283,7 +285,9 @@ body {
 .country-container:hover {
     transform: scale(1.02);
     cursor: pointer;
+    background-color: #44444c;
     border-radius: 12px;
+    box-shadow: 0px 0px 10px 10px #44444c/*inset, 0px 0px 0px 1000px rgba(0,0,0,0.5)*/
 }
 
 .country-flag-name {
@@ -293,28 +297,25 @@ body {
 
 .country-name-cases{
     width: 20%;
-    padding-right: 20px;
 }
 
 .country-name {
     padding-left: 10px;
     color: white;
-    font-size: 20px;
+    font-size: 24px;
 }
 
 .flag-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
 }
 
 .country-flag-container {
     border-radius: 50%;
     overflow: hidden;
-    height: 50px;
-    width: 50px;
-    object-fit: contain;
+    height: 40px;
+    width: 40px;
     background-size: cover;
     background-position: center;
     display: flex;
@@ -329,15 +330,16 @@ body {
     font-weight: 600;
 }
 
-.country-today-delta {
-    width: 80%;
-    padding-right: 5%;
-    /* text-align: start; */
+.country-today-delta{
+    width: 100%;
+    /* padding-right: 10%; */
+    text-align: end;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-size: 18px;
-    font-weight: 400;
+    font-size: 14px;
+    font-weight: 600;
+    padding-left: 5%;
 }
 
 .country-info-container {
@@ -356,27 +358,12 @@ body {
     flex-basis: 100%;
 }
 
-#piechart {
+#piechart{
     transition: all 0.2s;
     width: 30vw;
     height: 500px;
 }
-
 #curve_chart{
     width: 70vw;
     height: 500px;
-}
-
-.footer{
-    width: 100%;
-    position: fixed;        
-    background: #333;
-    padding: 10px 0;
-    color: #fff;
-    bottom: 0;
-}
-
-.container{
-    width: 80%;
-    margin: 0 auto; /* Center the DIV horizontally */
 }

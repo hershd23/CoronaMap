@@ -88,4 +88,5 @@ buildCountryList = (countriesData, filter, type) => {
     `
     })
     document.getElementById('country-list').innerHTML = html
+    //buildCircles(countriesData, lat, lng, 4.5)
 }

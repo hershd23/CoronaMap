@@ -1,9 +1,9 @@
-function initMap(circles, lat, lng, zoom, color, type) {
+function initMap(circles, lat=0, lng=20, zoom, color, type) {
     var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/dark-v10',
         zoom: 1.5,
-        center: [0, 20]
+        center: [lng, lat]
     });
 
     // Construct the circle for each value in citymap.
@@ -40,7 +40,9 @@ function initMap(circles, lat, lng, zoom, color, type) {
             fillOpacity: 0.25,
         }).addTo(map);
 
-
+        countryCircle.on('click', function (mapMouseEvent) {
+            console.log('Click:', mapMouseEvent.point);
+        });
     }
 }
 
