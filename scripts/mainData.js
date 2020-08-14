@@ -12,6 +12,8 @@ setUpNavButtons = (data) => {
     document.getElementById('recovered-total').innerText = numbersFriendlyFormat(data.recovered)
 
     // total cases
-    document.getElementById('cases-delta').innerText = `Today: ${addDecimals(data.cases)}`
+    document.getElementById('cases-delta').innerText = `Net Today: ${addDecimals(data.todayCases - data.todayDeaths - data.todayRecovered)}`
     document.getElementById('cases-total').innerText = numbersFriendlyFormat(data.cases)
+
+    console.log('data', data)
 }
