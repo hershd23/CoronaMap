@@ -121,7 +121,7 @@ drawLineChart = (chartData) => {
                     minSpacing: 20
                 }
             },
-            lineWidth: 10,
+            lineWidth: 5,
             chartArea: {
                 left: 100,
                 top: 70,
