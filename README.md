@@ -4,4 +4,4 @@ Uses Mapbox API and Google charts API in order to provide interesting Coronaviru
 
 The application fetches Real-Time Data generously provided at:- https://disease.sh 
 
-Still in development, to contribute submit a PR
+Deployed site at https://hershd23.github.io/CoronaMap/
